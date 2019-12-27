@@ -8,10 +8,8 @@
 
 {% endif %}
 
-<form method="POST" action="/contact/"> {% csrf_token %}
-    <input type="text" name="fullname">
-    <input type="email" name="email">
-    <textarea name="content "></textarea>
+<form method="POST" action="."> {% csrf_token %}
+    {{ form.as_p }}
     <button type="submit">Send</button>
 </form>
 
