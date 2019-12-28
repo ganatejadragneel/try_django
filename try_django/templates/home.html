@@ -2,7 +2,7 @@
 
 {% block content %}
 
-{{title}}
+<h1>{{title}}</h1>
 
 {{user}}
 
@@ -11,9 +11,11 @@
 {% if user.is_authenticated %}
 
 <h1> User only data</h1>
-    {% for a in my_list %}
-        <li>{{a}}</li>
-    {% endfor %}
+{% for a in blog_list %}
+
+    {% include 'blog/list-inline.html' with blog_post=a %}
+{% endfor %}
+
 {% endif %}
 
 {% endblock %}
